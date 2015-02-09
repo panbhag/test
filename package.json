@@ -1,0 +1,40 @@
+{
+  "name": "olaweb",
+  "version": "0.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "pretest": "jshint ."
+  },
+  "dependencies": {
+    "compression": "^1.0.3",
+    "director": "^1.2.5",
+    "errorhandler": "^1.1.1",
+    "es6-promise": "^2.0.0",
+    "es6-promises": "^1.0.8",
+    "gulp": "^3.8.10",
+    "gulp-browserify": "^0.5.0",
+    "gulp-concat": "^2.4.2",
+    "immstruct": "^1.1.0",
+    "immutable": "^3.4.1",
+    "lodash": "^2.4.1",
+    "loopback": "^2.5.0",
+    "loopback-boot": "^2.2.0",
+    "loopback-datasource-juggler": "^2.7.0",
+    "omniscient": "^2.1.0",
+    "page": "^1.5.0",
+    "react": "^0.12.1",
+    "reactify": "^0.17.1",
+    "reflux": "^0.2.0",
+    "serve-favicon": "^2.0.1",
+    "superagent": "^0.21.0",
+    "cortexjs":"^0.6.2",
+    "react-map":"*",
+    "underscore":"*"
+  },
+  "optionalDependencies": {
+    "loopback-explorer": "^1.1.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.6"
+  }
+}

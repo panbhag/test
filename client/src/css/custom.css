@@ -1,0 +1,28 @@
+#geopicker {
+position: absolute;
+top: 73px;
+left: 514px;
+width: 300px;
+height: 40px;
+clear: both;
+
+}
+
+#map-canvas{
+	height: 774px;
+}
+
+.map-wapper-opacity{
+
+	background-color: #8A9632;
+	opacity: 0.9;
+}
+
+#cab-type-list{
+position: fixed;
+top: 75px;
+right: 0;
+opacity: 0.9;
+background-color: #797C55;
+z-index: 9999;
+}
