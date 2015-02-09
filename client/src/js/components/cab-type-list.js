@@ -23,7 +23,7 @@ var CabTypeList = React.createClass({
 						<table className="carList">
 							<thead>
 							 	<tr>
-							     	<th colspan="2" className="firstTh">Select Car</th>
+							     	<th colSpan="2" className="firstTh">Select Car</th>
 						            <th>Fare</th>
 								</tr>
 							</thead>

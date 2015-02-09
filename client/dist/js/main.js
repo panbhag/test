@@ -24,7 +24,7 @@ var CabTypeList = React.createClass({displayName: "CabTypeList",
 						React.createElement("table", {className: "carList"}, 
 							React.createElement("thead", null, 
 							 	React.createElement("tr", null, 
-							     	React.createElement("th", {colspan: "2", className: "firstTh"}, "Select Car"), 
+							     	React.createElement("th", {colSpan: "2", className: "firstTh"}, "Select Car"), 
 						            React.createElement("th", null, "Fare")
 								)
 							), 
@@ -56,18 +56,23 @@ var React     = require('react');
 
 
 var CabType = React.createClass({displayName: "CabType",
+
+	trigger:function()
+	{
+		$("#geopicker").trigger("geocode");
+
+	},
+
 	render:function(){
 		var cabType = this.props.cabType;
+		var cabIconClass = "cab-ico ico-"+ cabType.name.toLowerCase();
 		return (
 
-	      React.createElement("tr", {className: "carTr active"}, 
+	      React.createElement("tr", {className: "carTr active", onClick: this.trigger}, 
 	        React.createElement("td", null, React.createElement("input", {type: "radio", className: "p2pFare", name: "p2p_fare", value: "441", tabindex: "1", "data-basekm": "4.0"})), 
 	        React.createElement("td", null, 
 		     React.createElement("div", {className: "taxiInfo"}, 
-                
-                    React.createElement("div", {className: "icon sedan"}), 
-                
-
+                    React.createElement("div", {className: cabIconClass}), 
 		         React.createElement("div", {className: "taxiData"}, 
 		             React.createElement("p", {className: "taxiName"}, cabType.name), 
 		             React.createElement("p", {className: "taxiCondi"}, cabType.seatCount, "  Seater AC")
@@ -75,8 +80,8 @@ var CabType = React.createClass({displayName: "CabType",
 		     )
 			), 
 	        React.createElement("td", null, 
-                React.createElement("div", {align: "center", className: "carCost basefare", value: "49.00"}, React.createElement("span", {className: "WebRupee"}, "₹ 49.00"), " ", React.createElement("span", {className: "taxiExtra"}, "for the first"), " 4.0 km "), 
-                React.createElement("div", {align: "center", className: "carCost perkm", value: "16.00"}, "( ", React.createElement("span", {className: "WebRupee"}, "₹ 16.00 / km"), " )")
+                React.createElement("div", {align: "center", className: "carCost basefare", value: "49.00"}, React.createElement("span", {className: "WebRupee"}, "₹ ", cabType.cost.base.rate, ".00"), " ", React.createElement("span", {className: "taxiExtra"}, "for the first"), " ", cabType.cost.base.distance, ".0 km "), 
+                React.createElement("div", {align: "center", className: "carCost perkm", value: "16.00"}, "( ", React.createElement("span", {className: "WebRupee"}, "₹ ", cabType.cost.after.rate, ".00 / km"), " )")
                 
             )
 	      )
@@ -552,7 +557,9 @@ var data = {
 
 	user:{name:"Pankaj Bhageria",gender:"Male",age:30},
 	startLocation:{name:"SilkBoard",geoPoint:{lat:"21",lng:"20"}},
-	cabTypes:[{name:"Auto",seatCount:2},{name:"Mini",seatCount:4},{name:"Sedan",seatCount:4}],
+	cabTypes:[{name:"Mini",seatCount:4,cost:{base:{distance:6.0,rate:100.0},after:{rate:10.0}}},
+			  {name:"Sedan",seatCount:4,cost:{base:{distance:8.0,rate:150.0},after:{rate:13.0}}},
+			  {name:"Prime",seatCount:2,cost:{base:{distance:5.0,rate:200},after:{rate:18.0}}}],
 	markers:[{lat:12.917746,lng:77.623788},
 	{lat:12.9175368536987,lng:77.627392888916},
 	{lat:12.915507725486131,lng:77.61984008833008},

@@ -5,18 +5,23 @@ var React     = require('react');
 
 
 var CabType = React.createClass({
+
+	trigger:function()
+	{
+		$("#geopicker").trigger("geocode");
+
+	},
+
 	render:function(){
 		var cabType = this.props.cabType;
+		var cabIconClass = "cab-ico ico-"+ cabType.name.toLowerCase();
 		return (
 
-	      <tr className="carTr active" >
+	      <tr className="carTr active" onClick={this.trigger} >
 	        <td><input type="radio" className="p2pFare" name="p2p_fare" value="441" tabindex="1" data-basekm="4.0"/></td>
 	        <td>
 		     <div className="taxiInfo">
-                
-                    <div className="icon sedan"></div>
-                
-
+                    <div className={cabIconClass}></div>
 		         <div className="taxiData">
 		             <p className="taxiName">{cabType.name}</p>
 		             <p className="taxiCondi">{cabType.seatCount}  Seater AC</p>
@@ -24,8 +29,8 @@ var CabType = React.createClass({
 		     </div>    
 			</td>
 	        <td>
-                <div align="center" className="carCost basefare" value="49.00"><span className="WebRupee">₹ 49.00</span> <span className="taxiExtra">for the first</span> 4.0 km </div>
-                <div align="center" className="carCost perkm" value="16.00">( <span className="WebRupee">₹ 16.00 / km</span> )</div>
+                <div align="center" className="carCost basefare" value="49.00"><span className="WebRupee">₹ {cabType.cost.base.rate}.00</span> <span className="taxiExtra">for the first</span> {cabType.cost.base.distance}.0 km </div>
+                <div align="center" className="carCost perkm" value="16.00">( <span className="WebRupee">₹ {cabType.cost.after.rate}.00 / km</span> )</div>
                 
             </td>
 	      </tr>

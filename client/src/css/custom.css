@@ -13,7 +13,6 @@ clear: both;
 }
 
 .map-wapper-opacity{
-
 	background-color: #8A9632;
 	opacity: 0.9;
 }
@@ -26,3 +25,59 @@ opacity: 0.9;
 background-color: #797C55;
 z-index: 9999;
 }
+
+
+.cab-ico{
+width: 70px;
+height: 30px;
+background: url(/images/cabs.png) no-repeat;
+display: inline-block;
+
+}
+
+.ico-auto{
+
+}
+
+.ico-mini{
+background-position: -133px -326px;
+}
+
+.ico-sedan{
+background-position: -133px -354px;
+}
+
+.ico-prime{
+	background-position: -132px -384px;
+}
+
+
+.carList{
+	width:100%;
+	background-color: #BBC098;
+}
+
+.carList tr:hover{
+	background-color:rgb(247, 247, 236);
+}
+
+.carList tbody tr td:first-child {
+padding: 5px;
+width: 30px;
+}
+
+.carList tbody tr td {
+vertical-align: middle;
+/**color: #5e5e57;**/
+padding: 10px 5px;
+line-height: 18px;
+}
+
+.taxiName{
+	font-size: 16px;
+	font-weight: bold;
+}
+.taxiCondi{
+	font-size: 10px;
+}
+
