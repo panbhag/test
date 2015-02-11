@@ -9,6 +9,9 @@ var React     = require('react'),
     Header = require("./components/header.js"),
     Footer = require("./components/footer.js"),
     request = require('superagent');
+    data = require('./data'),
+    CabTypeList = require('./components/cab-type-list.js');
+
     //Cortex = require('cortexjs');
 
 
@@ -43,7 +46,7 @@ page("*",function(ctx,next){
 
 });
 
-page("/ride-now",function(ctx,next){
+page("/",function(ctx,next){
 
 	var RideNow = require("./components/ride-now");
 
@@ -54,6 +57,16 @@ page("/ride-now",function(ctx,next){
 	next();	
 })
 
+page("/test",function(ctx,next){
+
+	var RideNow = require("./components/ride-now");
+
+	function render () {
+	    React.render(RideNow(), document.getElementById('content'));
+	}
+	pageRendeCallbacks.push(render);
+	next();	
+})
 
 
 // page("/login",function(ctx,next){
@@ -98,6 +111,15 @@ function renderAll()
 	})
 
 }
+
+
+data.on("update", function(){
+
+	renderAll();
+	//React.render(<CabTypeList cabTypes={data.cabTypes} selectedCabType={data.selectedCabType} />,document.getElementById('cab-type-list'))
+
+});
+
 //structure.on('swap', renderAll);
 
 

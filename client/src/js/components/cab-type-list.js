@@ -6,12 +6,15 @@ var CabType = require('./cab-type');
 
 var CabTypeList = React.createClass({
 
-
 	render:function(){
+
+		var self = this;
 
 		var cabTypes = this.props.cabTypes.map(function(cabType){
 
-			return <CabType cabType={cabType}/>
+			var cabLocations = self.props.cabLocations[cabType.name.getValue().toLowerCase()];
+
+			return <CabType cabType={cabType} selectedCabType={self.props.selectedCabType} cabLocations={cabLocations}/>
 
 		});
 

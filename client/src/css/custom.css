@@ -61,6 +61,11 @@ background-position: -133px -354px;
 	background-color:rgb(247, 247, 236);
 }
 
+.carList tr.active{
+	background-color:rgb(247, 247, 236);
+}
+
+
 .carList tbody tr td:first-child {
 padding: 5px;
 width: 30px;

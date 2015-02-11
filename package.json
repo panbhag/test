@@ -28,8 +28,9 @@
     "serve-favicon": "^2.0.1",
     "superagent": "^0.21.0",
     "cortexjs":"^0.6.2",
-    "react-map":"*",
-    "underscore":"*"
+    "underscore":"*",
+    "bus": "git://github.com/threepointone/bus"
+
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.1.0"

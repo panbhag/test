@@ -24,10 +24,10 @@ var RideNow = React.createClass({
 					<div id="map-canvas"></div>
 				</div>
 				<div>
-					<GeoPicker markers={data.markers}/>
+					<GeoPicker/>
 				</div>
 				<div id='cab-type-list'>
-					<CabTypeList cabTypes={data.cabTypes} />
+					<CabTypeList cabTypes={data.cabTypes} selectedCabType={data.selectedCabType} cabLocations={data.cabLocations}/>
 				</div>
 			</div>
 			)

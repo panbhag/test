@@ -1,3 +1,4 @@
+  var bus = require('bus');
   /**
  * jQuery Geocoding and Places Autocomplete Plugin - V 1.6.4
  *
@@ -131,6 +132,11 @@
         'zoom_changed',
         $.proxy(this.mapZoomed, this)
       );
+      var self = this;
+      bus.on('markers.change',function(locations){
+          self.updateMarkers(locations);
+
+      })
     },
 
     // Add a marker with the provided `markerOptions` but only
@@ -151,14 +157,14 @@
       );
     },
 
-    updateMarkers:function(location){
+    updateMarkers:function(locations){
 
       console.log("*******start updateMarkers******");
       //var location = result.geometry.location;
-      var lat = location.lat();
-      var lng = location.lng();
-      console.log("lat,lng",lat,lng);
-      var locations = this.options.getLocations(lat,lng);
+//      var lat = location.lat();
+//      var lng = location.lng();
+      // console.log("lat,lng",lat,lng);
+      // var locations = this.options.getLocations(lat,lng);
       console.log('locations',locations);
 
       this.removeMarkers();
@@ -436,7 +442,10 @@
     // and trigger the "geocode:result" event on the input.
     update: function(result){
 
-      this.updateMarkers(result.geometry.location);
+
+      bus.emit("location.changed",result.geometry.location.lat(),result.geometry.location.lng());
+
+      //this.updateMarkers(result.geometry.location);
 
 
       console.log("lat,lng",result.geometry.location.lat(),result.geometry.location.lng());
@@ -518,7 +527,8 @@
     // Fire the "geocode:dragged" event and pass the new position.
     markerDragged: function(event){
       this.trigger("geocode:dragged", event.latLng);
-      this.updateMarkers(event.latLng);
+      bus.emit("location.changed",event.latLng.lat(),event.latLng.lng());
+      //this.updateMarkers(event.latLng);
     },
 
     mapClicked: function(event) {

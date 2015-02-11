@@ -8,7 +8,15 @@ gulp.task("browserify",function(){
 	.pipe(browserify({transform:'reactify'}))
 	.pipe(concat('main.js'))
 	.pipe(gulp.dest('client/dist/js'))
+
+    gulp.src('client/src/js/jquery.geocomplete.js')
+	.pipe(browserify())
+	.pipe(concat('jquery.geocomplete.js'))
+	.pipe(gulp.dest('client/dist/js'))
+
 });
+
+
 
 gulp.task('copy',function(){
 	gulp.src('client/src/index.html')
