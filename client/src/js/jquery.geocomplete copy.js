@@ -168,7 +168,6 @@
       console.log('locations',locations);
 
 
-      var latlngbounds = new google.maps.LatLngBounds();
 
 
       this.removeMarkers();
@@ -190,16 +189,32 @@
         var marker = new google.maps.Marker(options);
         this.markersArray.push(marker);
 
-        var latLng = new google.maps.LatLng(locations[i].lat, locations[i].lng);
-        latlngbounds.extend(latLng);
 
       }
+      this.centerMarkers();
+
+
+    },
+
+    centerMarkers:function()
+    {
+      if(!this.markersArray){return;}
+
+      var locations = this.markersArray;
+      var latlngbounds = new google.maps.LatLngBounds();
+
+      for (var i = 0; i < locations; i++) { 
+          var latLng = new google.maps.LatLng(locations[i].lat, locations[i].lng);
+          latlngbounds.extend(latLng);
+
+
+      } 
 
       if(locations.length > 0){
         if(this.currentLocation)
         {  latlngbounds.extend(this.currentLocation); }
         this.map.setCenter(latlngbounds.getCenter());
-        //this.map.fitBounds(latlngbounds);
+        this.map.fitBounds(latlngbounds);
       }
 
 
@@ -452,7 +467,7 @@
 
 
       bus.emit("location.changed",result.geometry.location.lat(),result.geometry.location.lng());
-
+      this.currentLocation = result.geometry.location;
       //this.updateMarkers(result.geometry.location);
 
 
@@ -536,6 +551,7 @@
     markerDragged: function(event){
       this.trigger("geocode:dragged", event.latLng);
       bus.emit("location.changed",event.latLng.lat(),event.latLng.lng());
+      this.currentLocation = event.latLng;
       //this.updateMarkers(event.latLng);
     },
 
