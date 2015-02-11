@@ -159,13 +159,17 @@
 
     updateMarkers:function(locations){
 
-      console.log("*******start updateMarkers******");
+      //console.log("*******start updateMarkers******");
       //var location = result.geometry.location;
 //      var lat = location.lat();
 //      var lng = location.lng();
       // console.log("lat,lng",lat,lng);
       // var locations = this.options.getLocations(lat,lng);
       console.log('locations',locations);
+
+
+      var latlngbounds = new google.maps.LatLngBounds();
+
 
       this.removeMarkers();
       //console.log('markers',this.options.markers);
@@ -185,15 +189,14 @@
 
         var marker = new google.maps.Marker(options);
         this.markersArray.push(marker);
-        
-        // google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        //   return function() {
-        //     infowindow.setContent(locations[i][0]);
-        //     infowindow.open(map, marker);
-        //   }
-        // })(marker, i));
+
+        var latLng = new google.maps.LatLng(locations[i].lat, locations[i].lng);
+        latlngbounds.extend(latLng);
 
       }
+      this.map.setCenter(latlngbounds.getCenter());
+      this.map.fitBounds(latlngbounds);
+
 
     },
 
