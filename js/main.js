@@ -679,6 +679,16 @@ page("/",function(ctx,next){
 	next();	
 })
 
+page("/test",function(ctx,next){
+
+	var RideNow = require("./components/ride-now");
+
+	function render () {
+	    React.render(RideNow(), document.getElementById('content'));
+	}
+	pageRendeCallbacks.push(render);
+	next();	
+})
 
 
 // page("/login",function(ctx,next){
