@@ -195,8 +195,13 @@
         latlngbounds.extend(latLng);
 
       }
-      this.map.setCenter(latlngbounds.getCenter());
-      this.map.fitBounds(latlngbounds);
+
+      if(locations.length > 0){
+        if(this.currentLocation)
+        {  latlngbounds.extend(this.currentLocation); }
+        this.map.setCenter(latlngbounds.getCenter());
+        //this.map.fitBounds(latlngbounds);
+      }
 
 
     },
