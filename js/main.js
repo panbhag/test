@@ -247,26 +247,34 @@ React.createElement("div", {className: "footer custom-footer"},
 									)
 								), 
 								React.createElement("div", {className: "menu-col2 "}, 
-									React.createElement("div", {className: "menu-header"}, React.createElement("p", null, "Melbourne")), 
+									React.createElement("div", {className: "menu-header"}, React.createElement("p", null, "South")), 
 									React.createElement("div", {className: "menu-item"}, 
 										React.createElement("ul", null, 
-											React.createElement("li", null, React.createElement("a", {href: ""}, "97-99 Isabella St")), 
-											React.createElement("li", null, React.createElement("a", {href: ""}, "London SE1 8DD")), 
-											React.createElement("li", null, React.createElement("a", {href: ""}, "United Kingdom")), 
-											React.createElement("li", {className: "menu-header menu-item3"}, React.createElement("p", null, "Queensland")), 
-											React.createElement("li", null, React.createElement("a", {href: ""}, "Columbo House ")), 
-											React.createElement("li", null, React.createElement("a", {href: ""}, "50-60 Blackfriars Rd")), 
-											React.createElement("li", null, React.createElement("a", {href: ""}, "Blackfriars, London"))
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Bangalore")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Chennai")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Madurai")), 
+											React.createElement("li", {className: "menu-header menu-item3"}, React.createElement("p", null, "North")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Delhi ")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Chandigarh")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Amritsar")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Ludhiana"))
 										)
 									)
 								), 
 								React.createElement("div", {className: "menu-col2 responsive-frame642"}, 
-									React.createElement("div", {className: "menu-header"}, React.createElement("p", null, "Sydney")), 
+									React.createElement("div", {className: "menu-header"}, React.createElement("p", null, "West")), 
 									React.createElement("div", {className: "menu-item"}, 
 										React.createElement("ul", null, 
-											React.createElement("li", null, React.createElement("a", {href: ""}, "14 Gambia St")), 
-											React.createElement("li", null, React.createElement("a", {href: ""}, "Waterloo")), 
-											React.createElement("li", null, React.createElement("a", {href: ""}, "London SE1 0XH, UK"))
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Mumbai")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Pune")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Ahemdabad")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Surat")), 
+											React.createElement("li", {className: "menu-header menu-item3"}, React.createElement("p", null, "East")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Kolkata ")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Guwahati")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Bhubaneswar")), 
+											React.createElement("li", null, React.createElement("a", {href: ""}, "Ludhiana"))
+
 										)
 									)
 								)
@@ -299,8 +307,7 @@ React.createElement("div", {className: "footer custom-footer"},
 							React.createElement("i", {className: "fa fa-tumblr"})
 						)
 					), 
-					React.createElement("div", {className: "copy-right"}, 
-						React.createElement("p", null, React.createElement("span", null, "TAKSI"), " © Copyright 2014 | All Rights Rerved  | Designed by ", React.createElement("a", {href: "http://themeforest.net/user/vishnusathyan"}, "Vishnu Sathyan"), " | Developed By ", React.createElement("a", {href: "http://www.themeskanon.com/"}, "Themeskanon"))
+					React.createElement("div", {className: "copy-right"}
 					)
 				)
 			)
